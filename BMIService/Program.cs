@@ -28,11 +28,11 @@ namespace BMIService
     {
         static void Main(string[] args)
         {
-            var baseAdress = new Uri("http://localhost:8082/BMIService");
+            var baseAdress = new Uri("http://localhost:8001/BMIService");
             var selfService = new ServiceHost(typeof(BmiCalculatorService), baseAdress);
             try
             {
-                selfService.AddServiceEndpoint(typeof (IBmiCalculatorService), new WSHttpBinding(), "BMIService");
+                selfService.AddServiceEndpoint(typeof (IBmiCalculatorService), new WSHttpBinding(), "BMICalculatorService");
                 ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
                 {
                     smb.HttpGetEnabled = true;

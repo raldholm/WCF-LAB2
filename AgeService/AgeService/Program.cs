@@ -15,7 +15,7 @@ namespace AgeService
         double CalculateAgedays(DateTime date);
         [OperationContract]
         string CalculateEvenBirthday(DateTime date);
-    }
+    } 
     public class AgeCalculator : IAgeCalculatorService
     {
         public double CalculateAgedays(DateTime date)

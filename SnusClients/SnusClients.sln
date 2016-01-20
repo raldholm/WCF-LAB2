@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnusClients", "SnusClients\SnusClients.csproj", "{DAF4A9FE-448F-426E-9614-659715145ACC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormSnusClient", "WinFormSnusClient\WinFormSnusClient.csproj", "{652080AD-6431-4802-8BEA-C1571B4F2F9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DAF4A9FE-448F-426E-9614-659715145ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAF4A9FE-448F-426E-9614-659715145ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAF4A9FE-448F-426E-9614-659715145ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{652080AD-6431-4802-8BEA-C1571B4F2F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652080AD-6431-4802-8BEA-C1571B4F2F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652080AD-6431-4802-8BEA-C1571B4F2F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652080AD-6431-4802-8BEA-C1571B4F2F9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

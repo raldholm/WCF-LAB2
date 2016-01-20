@@ -13,6 +13,8 @@ namespace AgeService
     {
         [OperationContract]
         double CalculateAgedays(DateTime date);
+        [OperationContract]
+        string CalculateEvenBirthday(DateTime date);
     }
     public class AgeCalculator : IAgeCalculatorService
     {
@@ -29,34 +31,28 @@ namespace AgeService
     }
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var baseAdress = new Uri("http://localhost:8032/AgeService");
 
-            var selfService = new ServiceHost(typeof(AgeCalculator), baseAdress);
 
+            ServiceHost selfService = new ServiceHost(typeof (AgeCalculator), baseAdress);
             try
             {
-
-                selfService.AddServiceEndpoint(typeof(IAgeCalculatorService), new BasicHttpBinding(),
-                    "IAgeCalculatorService");
-
-                var smb = new ServiceMetadataBehavior { HttpGetEnabled = true };
-
+                selfService.AddServiceEndpoint(typeof (IAgeCalculatorService), new WSHttpBinding(), "AgeService");
+                ServiceMetadataBehavior smb = new ServiceMetadataBehavior {HttpGetEnabled = true};
                 selfService.Description.Behaviors.Add(smb);
-
                 selfService.Open();
-
-                Console.WriteLine("Servicen är startad!");
-                Console.WriteLine("Tryck på valfri tangent för att avsluta");
-                Console.WriteLine();
+                Console.WriteLine("Tjänsten är öppen.");
+                Console.WriteLine("Tryck enter för att avsluta tjänsten.");
                 Console.ReadKey();
             }
-
             catch (CommunicationException ex)
             {
-                Console.WriteLine("Kunde ej starta hosten: {0}", ex);
+                Console.WriteLine("Kommunikationsfel: " + ex.Message);
+                selfService.Abort();
             }
+
         }
     }
-}
+    }
